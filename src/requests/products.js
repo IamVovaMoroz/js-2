@@ -1,13 +1,25 @@
-import { instance } from '../services/api';
+import { instance } from '../services/api'
 
-export function getAllProducts() {
-    return instance.get('products');
-};
+export function getAllProducts () {
+  return instance.get('products/?limit=3')
+}
 
-export function getProductById(id) {
-    return instance.get(`products/${id}`);
-};
+// function getAllProducts () {
+//   fetch('https://dummyjson.com/products')
+//     .then(res => res.json())
+//     .then(console.log)
+// }
 
-export function productAdd(title) {
-    return instance.post('products/add', {title});
-};
+// Тоже самое через fetch а не axios
+
+// export function getAllProducts() {
+//     return instance.get('products');
+// };
+
+// export function getProductById(id) {
+//     return instance.get(`products/${id}`);
+// };
+
+// export function productAdd(title) {
+//     return instance.post('products/add', {title});
+// };

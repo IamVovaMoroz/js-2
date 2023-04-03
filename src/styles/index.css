@@ -5,3 +5,16 @@ h2 {
 ul, div {
     margin-bottom: 100px;
 }
+
+#allProducts{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    /* flex-direction: column; */
+gap: 15px;
+}
+
+li{
+    border: 1px solid gold;
+    padding: 15px;
+}
