@@ -1,8 +1,11 @@
 import { instance } from '../services/api'
 
+// Получения с сервера всех продуктов Limit 3 ограничения по продуктам загружаемым
 export function getAllProducts () {
   return instance.get('products/?limit=3')
 }
+
+// Тоже самое через fetch а не axios
 
 // function getAllProducts () {
 //   fetch('https://dummyjson.com/products')
@@ -10,16 +13,25 @@ export function getAllProducts () {
 //     .then(console.log)
 // }
 
-// Тоже самое через fetch а не axios
+// Получения с сервера  продуктов по id
 
-// export function getAllProducts() {
-//     return instance.get('products');
-// };
+export function getProductById (id) {
+  return instance.get(`products/${id}`)
+}
 
-// export function getProductById(id) {
-//     return instance.get(`products/${id}`);
-// };
+// Добавление на backend (products/add это данные с бекенда для добавления)
 
-// export function productAdd(title) {
-//     return instance.post('products/add', {title});
-// };
+// export function productAddByRequest (description) {
+//   return instance.post(`products/add`, { description }).then(function (response) {
+//     console.log(response);
+//   })
+// }
+
+export function productAddByRequest (title) {
+  return instance.post('products/add', { title })
+}
+
+// Удалить продукт по ID
+export function deleteProductById (id) {
+  return instance.delete(`products/${id}`)
+}

@@ -19,9 +19,27 @@ export function createProductListMarkup (products) {
 // }
 
 export function createProductMarkup (product) {
-  return `<img src="${product.images[2]}" alt="${product.title}"><p>${product.title}</p><p>Price: ${product.price}</p>`
+  return `<img src="${product.images[0]}" alt="${product.title}" ><p> Model: ${product.title}</p><p>Description: ${product.description}</p><p>Price: ${product.price}$</p>`
 }
 
+// export function createProductMarkup (product) {
+//   return `<img src="${product.images[2]}" alt="${product.title}"><p>${product.title}</p><p>Price: ${product.price}</p>`
+// }
+
 export function createNewProductMarkup (product) {
-  return `<h2>Ви додали новий продукт: ${product.title}</h2>`
+  return `<h2> Model: ${product.title}
+  </h2>
+  
+  `
+}
+// <p>Description: ${product.description}</p>
+// <p>Price: ${product.price}$</p>
+
+// Удалить продукт по ID
+
+export function deleteProductMarkup (product) {
+  return `<h2> Товар был удалён с номером ID: ${product.id}
+  </h2>
+  
+  `
 }
