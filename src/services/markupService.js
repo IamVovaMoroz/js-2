@@ -34,3 +34,12 @@ export function createNewProductMarkup (product) {
 }
 // <p>Description: ${product.description}</p>
 // <p>Price: ${product.price}$</p>
+
+export function createAllUsersListMarkup (users) {
+  return users
+    .map(
+      user =>
+        `<li><p> FirstName: ${user.firstName}</p><p>LastName: ${user.lastName}</p><p>Age: ${user.age}</p><p>Email: ${user.email}</p><p>Phone: ${user.phone}</p></li>`
+    )
+    .join('')
+}

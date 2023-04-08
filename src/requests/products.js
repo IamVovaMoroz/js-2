@@ -1,8 +1,16 @@
 import { instance } from '../services/api'
 
 // Получения с сервера всех продуктов Limit 3 ограничения по продуктам загружаемым
+// export function getAllProducts () {
+//   return instance.get('products/?limit=3')
+// }
+
 export function getAllProducts () {
-  return instance.get('products/?limit=3')
+  return instance.get('products/?limit=4')
+}
+
+export function getAllUsers () {
+  return instance.get('users/?limit=3')
 }
 
 // export function getAllProducts () {

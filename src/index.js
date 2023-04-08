@@ -6,21 +6,24 @@ import {
   getProductById,
   productAdd,
   deleteProductById,
-  productAddByRequest
+  productAddByRequest,
+  getAllUsers
 } from './requests/products'
 import {
   createProductListMarkup,
   createProductMarkup,
-  createNewProductMarkup
+  createNewProductMarkup,
+  createAllUsersListMarkup
 } from './services/markupService'
 
 // Задача 1 получение всех продуктов
-// const allProductsList = document.querySelector('#allProducts')
+const allProductsList = document.querySelector('#allProducts')
 // console.log(allProductsList)
 
-// getAllProducts().then(({ data: { products } }) => {
-//   allProductsList.innerHTML = createProductListMarkup(products)
-// })
+getAllProducts().then(({ data: { products } }) => {
+  allProductsList.innerHTML = createProductListMarkup(products)
+})
+
 // getAllProducts()
 //   .then(res => console.log(res.data.products[2].brand))
 //   .catch(error => {
@@ -80,22 +83,31 @@ import {
 
 // // Задача 4 удалить продукт по ID
 
-const deletionProductForm = document.querySelector('#deletionProductForm')
-const deletionProductSection = document.querySelector('#deleteProductSection')
+// const deletionProductForm = document.querySelector('#deletionProductForm')
+// const deletionProductSection = document.querySelector('#deleteProductSection')
 
-deletionProductForm.addEventListener('submit', onDeletionProductForm)
+// deletionProductForm.addEventListener('submit', onDeletionProductForm)
 
-function onDeletionProductForm (event) {
-  event.preventDefault()
+// function onDeletionProductForm (event) {
+//   event.preventDefault()
 
-  const inputValue = event.target.elements.deletionId.value.trim()
-  console.log(inputValue)
+//   const inputValue = event.target.elements.deletionId.value.trim()
+//   console.log(inputValue)
 
-  deleteProductById(inputValue)
-    .then(
-      res =>
-        (deletionProductSection.innerHTML = `<h2> Товар был удалён с номером ID: ${inputValue}
-    </h2>`)
-    )
-    .catch(error => console.log(alert(error)))
-}
+//   deleteProductById(inputValue)
+//     .then(
+//       res =>
+//         (deletionProductSection.innerHTML = `<h2> Товар был удалён с номером ID: ${inputValue}
+//     </h2>`)
+//     )
+//     .catch(error => console.log(alert(error)))
+// }
+
+// Задача 5 получить всех юзеров
+
+const allUsersList = document.querySelector('#allUsers')
+console.log(allUsersList)
+
+getAllUsers().then(({ data: { users } }) => {
+  allUsersList.innerHTML = createAllUsersListMarkup(users)
+})
