@@ -35,11 +35,6 @@ export function createNewProductMarkup (product) {
 // <p>Description: ${product.description}</p>
 // <p>Price: ${product.price}$</p>
 
-// Удалить продукт по ID
 
-export function deleteProductMarkup (product) {
-  return `<h2> Товар был удалён с номером ID: ${product.id}
-  </h2>
-  
-  `
-}
+
+

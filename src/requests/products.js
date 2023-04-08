@@ -1,8 +1,12 @@
 import { instance } from '../services/api'
 
 // Получения с сервера всех продуктов Limit 3 ограничения по продуктам загружаемым
+// export function getAllProducts () {
+//   return instance.get('products/?limit=3')
+// }
+
 export function getAllProducts () {
-  return instance.get('products/?limit=3')
+  return instance.get('products/')
 }
 
 // Тоже самое через fetch а не axios
@@ -27,11 +31,13 @@ export function getProductById (id) {
 //   })
 // }
 
-export function productAddByRequest (title) {
-  return instance.post('products/add', { title })
-}
+// export function productAddByRequest (title) {
+//   return instance.post('products/add', { title })
+// }
 
 // Удалить продукт по ID
 export function deleteProductById (id) {
   return instance.delete(`products/${id}`)
 }
+
+
