@@ -39,5 +39,3 @@ export function getProductById (id) {
 export function deleteProductById (id) {
   return instance.delete(`products/${id}`)
 }
-
-

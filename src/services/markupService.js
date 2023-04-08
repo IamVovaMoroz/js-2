@@ -34,7 +34,3 @@ export function createNewProductMarkup (product) {
 }
 // <p>Description: ${product.description}</p>
 // <p>Price: ${product.price}$</p>
-
-
-
-
