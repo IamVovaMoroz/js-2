@@ -1,13 +1,13 @@
 import { instance } from '../services/api'
 
 // Получения с сервера всех продуктов Limit 3 ограничения по продуктам загружаемым
-// export function getAllProducts () {
-//   return instance.get('products/?limit=3')
-// }
-
 export function getAllProducts () {
-  return instance.get('products/')
+  return instance.get('products/?limit=3')
 }
+
+// export function getAllProducts () {
+//   return instance.get('products/')
+// }
 
 // Тоже самое через fetch а не axios
 

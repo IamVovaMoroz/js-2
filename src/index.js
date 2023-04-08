@@ -15,21 +15,21 @@ import {
 } from './services/markupService'
 
 // Задача 1 получение всех продуктов
-const allProductsList = document.querySelector('#allProducts')
+// const allProductsList = document.querySelector('#allProducts')
 // console.log(allProductsList)
 
 // getAllProducts().then(({ data: { products } }) => {
 //   allProductsList.innerHTML = createProductListMarkup(products)
 // })
-getAllProducts()
-  .then(res => console.log(res.data.products[2].brand))
-  .catch(error => {
-    console.log(error)
-  })
-getAllProducts().then(({ data: { products } }) => {
-  allProductsList.innerHTML = createProductListMarkup(products)
-})
-allProductsList.innerHTML = getAllProducts(res.data.products[0])
+// getAllProducts()
+//   .then(res => console.log(res.data.products[2].brand))
+//   .catch(error => {
+//     console.log(error)
+//   })
+// getAllProducts().then(({ data: { products } }) => {
+//   allProductsList.innerHTML = createProductListMarkup(products)
+// })
+// allProductsList.innerHTML = getAllProducts(res.data.products[0])
 // // Задача 2 получение продуктов по ID
 
 // const productsForm = document.querySelector('#singleProductForm')
@@ -99,7 +99,3 @@ function onDeletionProductForm (event) {
     )
     .catch(error => console.log(alert(error)))
 }
-
-// Удалите продукт по его ID.
-// Если успешно, выведите через alert SUCCESS и инфо
-// об удаленном продукте, в противном случае выведите ERROR и причину ошибки.
