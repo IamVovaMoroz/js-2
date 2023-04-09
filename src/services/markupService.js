@@ -43,3 +43,10 @@ export function createAllUsersListMarkup (users) {
     )
     .join('')
 }
+
+// export function findUserByIdMarkup (users) {
+//   return users.filter(user => user.firstName === 0).map(
+//     user =>
+//       `<li><p> Вот данные User(s) с FirstName: ${user.firstName}</p><p>LastName: ${user.lastName}</p><p>Age: ${user.age}</p><p>Email: ${user.email}</p><p>Phone: ${user.phone}</p></li>`
+//   )
+// }

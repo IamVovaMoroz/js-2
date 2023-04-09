@@ -1,19 +1,23 @@
 import './styles/normalize.css'
 import './styles/index.css'
 
+import { getUserByName } from './requests/products'
+
 import {
   getAllProducts,
   getProductById,
   productAdd,
   deleteProductById,
   productAddByRequest,
-  getAllUsers
+  getAllUsers,
+  getUserById
 } from './requests/products'
 import {
   createProductListMarkup,
   createProductMarkup,
   createNewProductMarkup,
-  createAllUsersListMarkup
+  createAllUsersListMarkup,
+  findUserByIdMarkup
 } from './services/markupService'
 
 // Задача 1 получение всех продуктов
@@ -111,3 +115,39 @@ console.log(allUsersList)
 getAllUsers().then(({ data: { users } }) => {
   allUsersList.innerHTML = createAllUsersListMarkup(users)
 })
+
+// Задача 6 получить  юзера по именам
+
+// // Задача 2 получение продуктов по ID
+
+const usersForm = document.querySelector('#userByNameForm')
+const usersPlace = document.querySelector('#usersByName')
+
+usersForm.addEventListener('submit', onUsersFormSubmit)
+
+function onUsersFormSubmit (event) {
+  event.preventDefault()
+  // Тут вводим event.target.elements потом значение с импута в html - name и value
+  const usersNameInput = event.target.elements.name.value.trim()
+  console.log(usersNameInput)
+
+  getUserByName(usersNameInput).then(({ users }) => {
+    usersPlace.innerHTML = users
+      .filter(user => usersNameInput === user.firstName)
+      .map(
+        user =>
+          `<li><p> Вот данные User(s) с FirstName: ${user.firstName}</p><p>LastName: ${user.lastName}</p><p>Age: ${user.age}</p><p>Email: ${user.email}</p><p>Phone: ${user.phone}</p></li>`
+      )
+  })
+}
+
+// function onProductsFormSubmit (event) {
+//   event.preventDefault()
+
+//   const idValueInput = event.target.elements.id.value
+//   console.log(idValueInput)
+
+//   getProductById(idValueInput).then(({ data }) => {
+//     productPlace.innerHTML = createProductMarkup(data)
+//   })
+// }
