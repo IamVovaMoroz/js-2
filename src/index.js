@@ -115,38 +115,36 @@ function onFormNewProductSubmit (event) {
 
 // Задача 5 получить всех юзеров
 
-const allUsersList = document.querySelector('#allUsers')
-console.log(allUsersList)
+// const allUsersList = document.querySelector('#allUsers')
+// console.log(allUsersList)
 
-getAllUsers().then(({ data: { users } }) => {
-  allUsersList.innerHTML = createAllUsersListMarkup(users)
-})
+// getAllUsers().then(({ data: { users } }) => {
+//   allUsersList.innerHTML = createAllUsersListMarkup(users)
+// })
 
 // Задача 6 получить  юзера по именам
 
-// // Задача 2 получение продуктов по ID
+// const usersForm = document.querySelector('#userByNameForm')
+// const usersPlace = document.querySelector('#usersByName')
 
-const usersForm = document.querySelector('#userByNameForm')
-const usersPlace = document.querySelector('#usersByName')
+// usersForm.addEventListener('submit', onUsersFormSubmit)
 
-usersForm.addEventListener('submit', onUsersFormSubmit)
+// function onUsersFormSubmit (event) {
+//   event.preventDefault()
+//   // Тут вводим event.target.elements потом значение с импута в html - name и value
+//   const usersNameInput = event.target.elements.name.value.trim()
+//   console.log(usersNameInput)
 
-function onUsersFormSubmit (event) {
-  event.preventDefault()
-  // Тут вводим event.target.elements потом значение с импута в html - name и value
-  const usersNameInput = event.target.elements.name.value.trim()
-  console.log(usersNameInput)
-
-  getUserByName(usersNameInput).then(({ data: { users } }) => {
-    let markupUser = users
-      .map(
-        user =>
-          `<li><p> Вот данные User(s) с FirstName: ${user.firstName}</p><p>LastName: ${user.lastName}</p><p>Age: ${user.age}</p><p>Email: ${user.email}</p><p>Phone: ${user.phone}</p></li>`
-      )
-      .join('')
-    usersPlace.innerHTML = markupUser
-  })
-}
+//   getUserByName(usersNameInput).then(({ data: { users } }) => {
+//     let markupUser = users
+//       .map(
+//         user =>
+//           `<li><p> Вот данные User(s) с FirstName: ${user.firstName}</p><p>LastName: ${user.lastName}</p><p>Age: ${user.age}</p><p>Email: ${user.email}</p><p>Phone: ${user.phone}</p></li>`
+//       )
+//       .join('')
+//     usersPlace.innerHTML = markupUser
+//   })
+// }
 
 // function onProductsFormSubmit (event) {
 //   event.preventDefault()
