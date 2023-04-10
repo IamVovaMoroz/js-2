@@ -57,23 +57,23 @@ getAllProducts().then(({ data: { products } }) => {
 
 // // Задача 3 добавление информации по товару и вывод на нашу разметку новых данных
 
-// const formNewProduct = document.querySelector('#new-product')
-// const newProductSection = document.querySelector('#newProductSection')
+const formNewProduct = document.querySelector('#new-product')
+const newProductSection = document.querySelector('#newProductSection')
 
-// formNewProduct.addEventListener('submit', onFormNewProductSubmit)
+formNewProduct.addEventListener('submit', onFormNewProductSubmit)
 
-// function onFormNewProductSubmit (event) {
-//   event.preventDefault()
+function onFormNewProductSubmit (event) {
+  event.preventDefault()
 
-//   const newTitle = event.target.elements.title.value.trim()
-//   // const newDescription = event.target.elements.description.value.trim()
-//   // const newPrice = event.target.elements.price.value.trim()
+  const newTitle = event.target.elements.title.value.trim()
+  const newDescription = event.target.elements.description.value.trim()
+  const newPrice = event.target.elements.price.value.trim()
 
-//   productAddByRequest(newTitle).then(({ data }) => {
-//     newProductSection.innerHTML = createNewProductMarkup(data)
-//   })
-// }
-// // formNewProduct.addEventListener('submit', onNewProductSubmit);
+  productAddByRequest(newTitle).then(({ title }) => {
+    newProductSection.innerHTML = createNewProductMarkup(title)
+  })
+}
+// formNewProduct.addEventListener('submit', onNewProductSubmit);
 
 // // function onNewProductSubmit(event) {
 // //     event.preventDefault();

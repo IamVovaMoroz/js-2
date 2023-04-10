@@ -33,14 +33,15 @@ export function getProductById (id) {
 
 // Добавление на backend (products/add это данные с бекенда для добавления)
 
-// export function productAddByRequest (description) {
-//   return instance.post(`products/add`, { description }).then(function (response) {
-//     console.log(response);
-//   })
-// }
+export function productAddByRequest (title) {
+  return instance.post(`products/add`, {
+    title: 'BMW Pencil'
+    /* other product data */
+  })
+}
 
 // export function productAddByRequest (title) {
-//   return instance.post('products/add', { title })
+//   return instance.post(`products/add', ${title}`)
 // }
 
 // Удалить продукт по ID
@@ -54,26 +55,5 @@ export function deleteProductById (id) {
 // }
 
 export async function getUserByName (name) {
-  return await instance.get(`users//filter?key=firstName&value=${name}`)
+  return await instance.get(`users/filter?key=firstName&value=${name}`)
 }
-
-// {
-//   "users": [
-//     {
-//       "firstName": "Demetrius",
-//       "hair": {
-//         "color": "Brown", // filter matched hair color
-//       },
-//       "id": 9,
-//       "lastName": "Corkery"
-//       // rest user data
-//     }
-//   ],
-//   "total": 26,
-//   "skip": 0,
-//   "limit": 26
-// }
-
-// fetch('https://dummyjson.com/users/filter?key=hair.color&value=Brown')
-// .then(res => res.json())
-// .then(console.log);

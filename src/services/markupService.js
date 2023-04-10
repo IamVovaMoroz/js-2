@@ -27,8 +27,8 @@ export function createProductMarkup (product) {
 // }
 
 export function createNewProductMarkup (product) {
-  return `<h2> Model: ${product.title}
-  </h2>
+  return `<p> Model: ${product.title}</p><p>Description: ${product.description}</p><p>Price: ${product.price}$</p>
+  
   
   `
 }
