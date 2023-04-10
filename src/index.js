@@ -131,13 +131,14 @@ function onUsersFormSubmit (event) {
   const usersNameInput = event.target.elements.name.value.trim()
   console.log(usersNameInput)
 
-  getUserByName(usersNameInput).then(({ users }) => {
-    usersPlace.innerHTML = users
-      .filter(user => usersNameInput === user.firstName)
+  getUserByName(usersNameInput).then(({ data: { users } }) => {
+    let markupUser = users
       .map(
         user =>
           `<li><p> Вот данные User(s) с FirstName: ${user.firstName}</p><p>LastName: ${user.lastName}</p><p>Age: ${user.age}</p><p>Email: ${user.email}</p><p>Phone: ${user.phone}</p></li>`
       )
+      .join('')
+    usersPlace.innerHTML = markupUser
   })
 }
 
@@ -150,4 +151,13 @@ function onUsersFormSubmit (event) {
 //   getProductById(idValueInput).then(({ data }) => {
 //     productPlace.innerHTML = createProductMarkup(data)
 //   })
+// }
+
+// export function createProductListMarkup (products) {
+//   return products
+//     .map(
+//       product =>
+//         `<li><img src="${product.images[0]}" alt="${product.title}" ><p> Model: ${product.title}</p><p>Description: ${product.description}</p><p>Price: ${product.price}$</p></li>`
+//     )
+//     .join('')
 // }
