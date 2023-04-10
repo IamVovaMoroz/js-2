@@ -35,7 +35,9 @@ export function getProductById (id) {
 
 export function productAddByRequest (title) {
   return instance.post(`products/add`, {
-    title: 'BMW Pencil'
+    title: 'BMW Pencil',
+    description: 'super car',
+    price: '1200'
     /* other product data */
   })
 }

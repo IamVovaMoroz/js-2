@@ -69,8 +69,14 @@ function onFormNewProductSubmit (event) {
   const newDescription = event.target.elements.description.value.trim()
   const newPrice = event.target.elements.price.value.trim()
 
-  productAddByRequest(newTitle).then(({ title }) => {
-    newProductSection.innerHTML = createNewProductMarkup(title)
+  productAddByRequest(newTitle).then(({ data }) => {
+    function createNewProductMarkup (product) {
+      return `<p> Model: ${product.title}</p><p>Description: ${product.description}</p><p>Price: ${product.price}$</p>
+      
+      
+      `
+    }
+    newProductSection.innerHTML = createNewProductMarkup(data)
   })
 }
 // formNewProduct.addEventListener('submit', onNewProductSubmit);
