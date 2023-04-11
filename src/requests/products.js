@@ -28,19 +28,19 @@ export function getAllUsers () {
 
 // Получения с сервера  продуктов по id
 
-export function getProductById (id) {
-  return instance.get(`products/${id}`)
-}
-
 // Добавление на backend (products/add это данные с бекенда для добавления)
 
-export function productAddByRequest (title) {
-  return instance.post(`products/add`, {
-    title: 'BMW Pencil',
-    description: 'super car',
-    price: '1200'
-    /* other product data */
-  })
+// export function productAddByRequest (title) {
+//   return instance.post(`products/add`, {
+//     title: 'BMW Pencil',
+//     description: 'super car',
+//     price: '1200'
+//     /* other product data */
+//   })
+// }
+
+export function productAddByRequest (product) {
+  return instance.post(`products/add`, product)
 }
 
 // export function productAddByRequest (title) {
@@ -59,4 +59,17 @@ export function deleteProductById (id) {
 
 export async function getUserByName (name) {
   return await instance.get(`users/filter?key=firstName&value=${name}`)
+}
+
+// Получение карточек пользователей по ID задача 7
+
+export function getCardById (id) {
+  return instance.get(`carts/${id}`)
+}
+
+// Задача 8:
+// Получи и отрендери список постов по ID пользователя.
+
+export function getPostById (id) {
+  return instance.get(`posts/${id}`)
 }
