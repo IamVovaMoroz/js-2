@@ -89,15 +89,15 @@ export function createAllUsersListMarkup (users) {
 
 // Задача 8
 
-export function createPostMarkup (post) {
-  return `
-  <h3> Post title: ${post.title}</h3>
-  <p> Post: ${post.body}</p>
-  <p> Post ID: ${post.id}</p>
-  <p> Post tags: ${post.tags}</p>
-  <p> Post reactions: ${post.reactions} Likes</p>
-  `
-}
+// export function createPostMarkup (post) {
+//   return `
+//   <h3> Post title: ${post.title}</h3>
+//   <p> Post: ${post.body}</p>
+//   <p> Post ID: ${post.id}</p>
+//   <p> Post tags: ${post.tags}</p>
+//   <p> Post reactions: ${post.reactions} Likes</p>
+//   `
+// }
 
 // <p>Total Products: ${card.totalProducts}</p>
 //   <p>Product 1:" ${card.products[0].title}"
