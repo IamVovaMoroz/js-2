@@ -12,7 +12,8 @@ import {
   getAllUsers,
   getUserById,
   getCardById,
-  getPostById
+  getPostById,
+  getPostsByIdUser
 } from './requests/products'
 import {
   createProductListMarkup,
@@ -21,16 +22,17 @@ import {
   createAllUsersListMarkup,
   findUserByIdMarkup,
   createCardMarkup,
-  createPostMarkup
+  createPostMarkup,
+  createPostsMarkup
 } from './services/markupService'
 
 // Задача 1 получение всех продуктов
-const allProductsList = document.querySelector('#allProducts')
-// console.log(allProductsList)
+// const allProductsList = document.querySelector('#allProducts')
+// // console.log(allProductsList)
 
-getAllProducts().then(({ data: { products } }) => {
-  allProductsList.innerHTML = createProductListMarkup(products)
-})
+// getAllProducts().then(({ data: { products } }) => {
+//   allProductsList.innerHTML = createProductListMarkup(products)
+// })
 
 // getAllProducts()
 //   .then(res => console.log(res.data.products[2].brand))
@@ -193,7 +195,7 @@ getAllProducts().then(({ data: { products } }) => {
 // Задача 8a:
 // Получи пост по ID и отрендери его.
 
-// const postForm = document.querySelector('#userPostsForm')
+// const postForm = document.querySelector('#userPostForm')
 // const postPlace = document.querySelector('#posts')
 
 // postForm.addEventListener('submit', onPostFormSubmit)
@@ -220,9 +222,9 @@ function onPostsFormSubmit (event) {
   event.preventDefault()
   // userId - input name="userId"
   const inputIdUserPost = event.target.elements.userId.value
-  // console.log(inputIdUserPost)
-  // getPostsByIdUser(inputIdUserPost).then(({ data }) => {
-  //   console.log(data)
-  //   postPlace.innerHTML = createPostMarkup(data)
-  // })
+  console.log(inputIdUserPost)
+  getPostsByIdUser(inputIdUserPost).then(({ data }) => {
+    console.log(data)
+    postsPlace.innerHTML = createPostsMarkup(data)
+  })
 }

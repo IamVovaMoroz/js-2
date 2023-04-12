@@ -87,7 +87,7 @@ export function createAllUsersListMarkup (users) {
 
 // discountedTotal, title, quantity, discountedPrice )
 
-// Задача 8
+// Задача 8a получить постпо ID поста
 
 // export function createPostMarkup (post) {
 //   return `
@@ -125,3 +125,21 @@ export function createAllUsersListMarkup (users) {
 //   <span>Quantity: ${card.products[4].quantity}</span>
 //   <span>Price: ${card.products[4].price}$</span>
 //   </p>`
+
+// Задача 8 получить пост по ID пользователя
+
+// export function createPostsMarkup (posts) {
+//   return `
+//   <h3> Post title: ${post.title}</h3>
+//   <p> Post: ${post.body}</p>
+//   <p> Post ID: ${post.id}</p>
+//   <p> Post tags: ${post.tags}</p>
+//   <p> Post reactions: ${post.reactions} Likes</p>
+//   `
+// }
+
+export function createPostsMarkup (posts) {
+  return `<li><p> Limit: ${posts.limit}</p><p>Total: ${posts.total}</p><p>Skip: ${posts.skip}$</p><p>Skip: ${posts.posts}$</p></li>`
+
+  // .join('')
+}
