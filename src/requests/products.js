@@ -67,9 +67,15 @@ export function getCardById (id) {
   return instance.get(`carts/${id}`)
 }
 
-// Задача 8:
-// Получи и отрендери список постов по ID пользователя.
+// Задача 8a:
+// Получи и отрендери пост по ID поста.
 
 export function getPostById (id) {
   return instance.get(`posts/${id}`)
+}
+
+// Задача 8:
+// Получи и отрендери список постов по ID пользователя.
+export function getPostsByIdUser (id) {
+  return instance.get(`posts/user/${id}`)
 }

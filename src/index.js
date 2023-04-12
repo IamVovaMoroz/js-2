@@ -61,28 +61,27 @@ getAllProducts().then(({ data: { products } }) => {
 
 // // Задача 3 добавление информации по товару и вывод на нашу разметку новых данных
 
-const formNewProduct = document.querySelector('#new-product')
-const newProductSection = document.querySelector('#newProductSection')
+// const formNewProduct = document.querySelector('#new-product')
+// const newProductSection = document.querySelector('#newProductSection')
 
-formNewProduct.addEventListener('submit', onFormNewProductSubmit)
+// formNewProduct.addEventListener('submit', onFormNewProductSubmit)
 
-function onFormNewProductSubmit (event) {
-  event.preventDefault()
+// function onFormNewProductSubmit (event) {
+//   event.preventDefault()
 
-  const title = event.target.elements.title.value.trim()
-  const description = event.target.elements.description.value.trim()
-  const price = event.target.elements.price.value.trim()
+//   const title = event.target.elements.title.value.trim()
+//   const description = event.target.elements.description.value.trim()
+//   const price = event.target.elements.price.value.trim()
 
-  productAddByRequest({ title, description, price }).then(({ data }) => {
-    function createNewProductMarkup (product) {
-      return `<p> Model: ${product.title}</p><p>Description: ${product.description}</p><p>Price: ${product.price}$</p>
-      
-      
-      `
-    }
-    newProductSection.innerHTML = createNewProductMarkup(data)
-  })
-}
+//   productAddByRequest({ title, description, price }).then(({ data }) => {
+//     function createNewProductMarkup (product) {
+//       return `<p> Model: ${product.title}</p><p>Description: ${product.description}</p><p>Price: ${product.price}$</p>
+
+//       `
+//     }
+//     newProductSection.innerHTML = createNewProductMarkup(data)
+//   })
+// }
 // formNewProduct.addEventListener('submit', onNewProductSubmit);
 
 // // function onNewProductSubmit(event) {
@@ -173,39 +172,57 @@ function onFormNewProductSubmit (event) {
 // Задача 7:
 // Получи и отрендери список карт по ID пользователя.
 
-const cardForm = document.querySelector('#userCartsForm')
-const cardPlace = document.querySelector('#carts')
+// const cardForm = document.querySelector('#userCartsForm')
+// const cardPlace = document.querySelector('#carts')
 
-cardForm.addEventListener('submit', onCardFormSubmit)
+// cardForm.addEventListener('submit', onCardFormSubmit)
 
-function onCardFormSubmit (event) {
-  event.preventDefault()
+// function onCardFormSubmit (event) {
+//   event.preventDefault()
 
-  const inputValueCard = event.target.elements.userId.value
+//   const inputValueCard = event.target.elements.userId.value
 
-  // console.log(inputValue)
+//   // console.log(inputValue)
 
-  getCardById(inputValueCard).then(({ data }) => {
-    console.log(data)
-    // cardPlace.innerHTML = createCardMarkup(data)
-  })
-}
+//   getCardById(inputValueCard).then(({ data }) => {
+//     console.log(data)
+//     // cardPlace.innerHTML = createCardMarkup(data)
+//   })
+// }
 
-// Задача 8:
+// Задача 8a:
 // Получи пост по ID и отрендери его.
 
-const postForm = document.querySelector('#userPostsForm')
-const postPlace = document.querySelector('#posts')
+// const postForm = document.querySelector('#userPostsForm')
+// const postPlace = document.querySelector('#posts')
 
-postForm.addEventListener('submit', onPostFormSubmit)
+// postForm.addEventListener('submit', onPostFormSubmit)
 
-function onPostFormSubmit (event) {
+// function onPostFormSubmit (event) {
+//   event.preventDefault()
+//   // userId - input name="userId"
+//   const inputIdPost = event.target.elements.userId.value
+//   // console.log(inputIdPost)
+//   getPostById(inputIdPost).then(({ data }) => {
+//     console.log(data)
+//     postPlace.innerHTML = createPostMarkup(data)
+//   })
+// }
+
+// Задача 8
+// Получи и отрендери список постов по ID пользователя.
+const postsForm = document.querySelector('#userPostsForm')
+const postsPlace = document.querySelector('#posts')
+
+postsForm.addEventListener('submit', onPostsFormSubmit)
+
+function onPostsFormSubmit (event) {
   event.preventDefault()
   // userId - input name="userId"
   const inputIdUserPost = event.target.elements.userId.value
   // console.log(inputIdUserPost)
-  getPostById(inputIdUserPost).then(({ data }) => {
-    console.log(data)
-    postPlace.innerHTML = createPostMarkup(data)
-  })
+  // getPostsByIdUser(inputIdUserPost).then(({ data }) => {
+  //   console.log(data)
+  //   postPlace.innerHTML = createPostMarkup(data)
+  // })
 }

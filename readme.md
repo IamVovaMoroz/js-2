@@ -1,19 +1,19 @@
-- Создай apiInstance с помощью библиотеки axios. /* https://axios-http.com/docs/instance */
+- Создай apiInstance с помощью библиотеки axios. /_ https://axios-http.com/docs/instance _/
 
 Используй https://dummyjson.com как baseUrl.
 
 - Создай запросы для получения, добавления, удаления и обновления данных.
   Запросы разбиты на категории posts, products, users.
 
-  /*
-    https://dummyjson.com/docs/users
-    https://dummyjson.com/docs/products
-    https://dummyjson.com/docs/posts
-  */
+  /_
+  https://dummyjson.com/docs/users
+  https://dummyjson.com/docs/products
+  https://dummyjson.com/docs/posts
+  _/
 
 - Импортируй все запросы в общий файл index.js
 
-Задача 1. 
+Задача 1.
 Создай функцию для получения информации обо всех продуктах с последующим рендером списка.
 
 Задача 2.
@@ -23,7 +23,7 @@
 Создай и отрендери новый продукт.
 
 Задача 4.
-Удалите продукт по его ID. 
+Удалите продукт по его ID.
 Если успешно, выведите через alert SUCCESS и инфо
 об удаленном продукте, в противном случае выведите ERROR и причину ошибки.
 
@@ -35,6 +35,9 @@
 
 Задача 7:
 Получи и отрендери список карт по ID пользователя.
+
+Задача 8а:
+Получи и отрендери пост по ID поста.
 
 Задача 8:
 Получи и отрендери список постов по ID пользователя.
