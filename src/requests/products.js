@@ -79,3 +79,9 @@ export function getPostById (id) {
 export function getPostsByIdUser (id) {
   return instance.get(`posts/user/${id}`)
 }
+
+// Задача командный проект
+
+export function getMoviesByName (name) {
+  return instance.get(`&query=${name}`)
+}
