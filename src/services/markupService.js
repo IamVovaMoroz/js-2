@@ -1,11 +1,11 @@
-export function createProductListMarkup (products) {
-  return products
-    .map(
-      product =>
-        `<li><img src="${product.images[0]}" alt="${product.title}" ><p> Model: ${product.title}</p><p>Description: ${product.description}</p><p>Price: ${product.price}$</p></li>`
-    )
-    .join('')
-}
+// export function createProductListMarkup (products) {
+//   return products
+//     .map(
+//       product =>
+//         `<li><img src="${product.images[0]}" alt="${product.title}" ><p> Model: ${product.title}</p><p>Description: ${product.description}</p><p>Price: ${product.price}$</p></li>`
+//     )
+//     .join('')
+// }
 
 // С деструктуризацией та же функция
 
@@ -18,31 +18,30 @@ export function createProductListMarkup (products) {
 //     .join('')
 // }
 
-export function createProductMarkup (product) {
-  return `<img src="${product.images[0]}" alt="${product.title}" ><p> Model: ${product.title}</p><p>Description: ${product.description}</p><p>Price: ${product.price}$</p>`
-}
+// export function createProductMarkup (product) {
+//   return `<img src="${product.images[0]}" alt="${product.title}" ><p> Model: ${product.title}</p><p>Description: ${product.description}</p><p>Price: ${product.price}$</p>`
+// }
 
 // export function createProductMarkup (product) {
 //   return `<img src="${product.images[2]}" alt="${product.title}"><p>${product.title}</p><p>Price: ${product.price}</p>`
 // }
 
-export function createNewProductMarkup (product) {
-  return `<p> Model: ${product.title}</p><p>Description: ${product.description}</p><p>Price: ${product.price}$</p>
-  
-  
-  `
-}
+// export function createNewProductMarkup (product) {
+//   return `<p> Model: ${product.title}</p><p>Description: ${product.description}</p><p>Price: ${product.price}$</p>
+
+//   `
+// }
 // <p>Description: ${product.description}</p>
 // <p>Price: ${product.price}$</p>
 
-export function createAllUsersListMarkup (users) {
-  return users
-    .map(
-      user =>
-        `<li><p> FirstName: ${user.firstName}</p><p>LastName: ${user.lastName}</p><p>Age: ${user.age}</p><p>Email: ${user.email}</p><p>Phone: ${user.phone}</p></li>`
-    )
-    .join('')
-}
+// export function createAllUsersListMarkup (users) {
+//   return users
+//     .map(
+//       user =>
+//         `<li><p> FirstName: ${user.firstName}</p><p>LastName: ${user.lastName}</p><p>Age: ${user.age}</p><p>Email: ${user.email}</p><p>Phone: ${user.phone}</p></li>`
+//     )
+//     .join('')
+// }
 
 // export function findUserByIdMarkup (users) {
 //   return users.filter(user => user.firstName === 0).map(
@@ -138,8 +137,40 @@ export function createAllUsersListMarkup (users) {
 //   `
 // }
 
-export function createPostsMarkup (posts) {
-  return `<li><p> Limit: ${posts.limit}</p><p>Total: ${posts.total}</p><p>Skip: ${posts.skip}$</p><p>Skip: ${posts.posts}$</p></li>`
+// export function createPostsMarkup (posts) {
+//   return `<li><p> Limit: ${posts.limit}</p><p>Total: ${posts.total}</p><p>Skip: ${posts.skip}$</p><p>Skip: ${posts.posts}$</p></li>`// }
 
-  // .join('')
+// чат gpt вариант
+export function createCardMarkup (card) {
+  return `
+    <p>Discounted Total: ${card.discountedTotal}</p>
+    <p>User ID: ${card.userId}</p>
+    <p>Total Products: ${card.totalProducts}</p>
+    ${card.products
+      .map(({ title, discountPercentage, quantity, price }, index) => {
+        return `
+        <p>Product ${index + 1}: "${title}"
+          <span>Discount: ${discountPercentage}%</span>
+          <span>Quantity: ${quantity}</span>
+          <span>Price: ${price}$</span>
+        </p>
+      `
+      })
+      .join('')}
+  `
 }
+
+// Наталья вариант
+// export function createCardMarkup (card) {
+//   return `
+//   <p> Discounted Total: ${card.discountedTotal}</p>
+//   <p> User ID: ${card.userId}</p>
+//   <p>Total Products: ${card.totalProducts}</p>
+// ${card.products.map(({ title, discountPercentage, quantity, price }, index) => {
+//   return `<p>Product ${index + 1}:"${title}"
+//   <span>Discount: ${discountPercentage}%</span>
+//   <span>Quantity: ${quantity}</span>
+//   <span>Price: ${price}$</span>
+//   </p>`
+// })}`
+// }

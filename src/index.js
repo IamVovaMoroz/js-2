@@ -174,23 +174,23 @@ import {
 // Задача 7:
 // Получи и отрендери список карт по ID пользователя.
 
-// const cardForm = document.querySelector('#userCartsForm')
-// const cardPlace = document.querySelector('#carts')
+const cardForm = document.querySelector('#userCartsForm')
+const cardPlace = document.querySelector('#carts')
 
-// cardForm.addEventListener('submit', onCardFormSubmit)
+cardForm.addEventListener('submit', onCardFormSubmit)
 
-// function onCardFormSubmit (event) {
-//   event.preventDefault()
+function onCardFormSubmit (event) {
+  event.preventDefault()
 
-//   const inputValueCard = event.target.elements.userId.value
+  const inputValueCard = event.target.elements.userId.value
 
-//   // console.log(inputValue)
+  // console.log(inputValue)
 
-//   getCardById(inputValueCard).then(({ data }) => {
-//     console.log(data)
-//     // cardPlace.innerHTML = createCardMarkup(data)
-//   })
-// }
+  getCardById(inputValueCard).then(({ data }) => {
+    console.log(data)
+    cardPlace.innerHTML = createCardMarkup(data)
+  })
+}
 
 // Задача 8a:
 // Получи пост по ID и отрендери его.
@@ -213,18 +213,18 @@ import {
 
 // Задача 8
 // Получи и отрендери список постов по ID пользователя.
-const postsForm = document.querySelector('#userPostsForm')
-const postsPlace = document.querySelector('#posts')
+// const postsForm = document.querySelector('#userPostsForm')
+// const postsPlace = document.querySelector('#posts')
 
-postsForm.addEventListener('submit', onPostsFormSubmit)
+// postsForm.addEventListener('submit', onPostsFormSubmit)
 
-function onPostsFormSubmit (event) {
-  event.preventDefault()
-  // userId - input name="userId"
-  const inputIdUserPost = event.target.elements.userId.value
-  console.log(inputIdUserPost)
-  getPostsByIdUser(inputIdUserPost).then(({ data }) => {
-    console.log(data)
-    postsPlace.innerHTML = createPostsMarkup(data)
-  })
-}
+// function onPostsFormSubmit (event) {
+//   event.preventDefault()
+//   // userId - input name="userId"
+//   const inputIdUserPost = event.target.elements.userId.value
+//   console.log(inputIdUserPost)
+//   getPostsByIdUser(inputIdUserPost).then(({ data }) => {
+//     console.log(data)
+//     postsPlace.innerHTML = createCardMarkup(data)
+//   })
+// }
