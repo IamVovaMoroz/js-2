@@ -245,6 +245,8 @@ function onSearchBarFormSubmit (event) {
   const onSearchBarInput = event.target.elements.searchBarInput.value
   console.log(onSearchBarInput)
   // Обьект получаем
+
+  
   getMoviesByName(onSearchBarInput).then(res => console.log(res))
 
   //  Рендерим в разметку
