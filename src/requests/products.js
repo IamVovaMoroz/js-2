@@ -83,5 +83,5 @@ export function getPostsByIdUser (id) {
 // Задача командный проект
 
 export function getMoviesByName (name) {
-  return instance.get(`&query=${name}`)
+  return instance.get(`query=${name}`)
 }

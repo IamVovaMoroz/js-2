@@ -141,24 +141,24 @@
 //   return `<li><p> Limit: ${posts.limit}</p><p>Total: ${posts.total}</p><p>Skip: ${posts.skip}$</p><p>Skip: ${posts.posts}$</p></li>`// }
 
 // чат gpt вариант
-export function createCardMarkup (card) {
-  return `
-    <p>Discounted Total: ${card.discountedTotal}</p>
-    <p>User ID: ${card.userId}</p>
-    <p>Total Products: ${card.totalProducts}</p>
-    ${card.products
-      .map(({ title, discountPercentage, quantity, price }, index) => {
-        return `
-        <p>Product ${index + 1}: "${title}"
-          <span>Discount: ${discountPercentage}%</span>
-          <span>Quantity: ${quantity}</span>
-          <span>Price: ${price}$</span>
-        </p>
-      `
-      })
-      .join('')}
-  `
-}
+// export function createCardMarkup (card) {
+//   return `
+//     <p>Discounted Total: ${card.discountedTotal}</p>
+//     <p>User ID: ${card.userId}</p>
+//     <p>Total Products: ${card.totalProducts}</p>
+//     ${card.products
+//       .map(({ title, discountPercentage, quantity, price }, index) => {
+//         return `
+//         <p>Product ${index + 1}: "${title}"
+//           <span>Discount: ${discountPercentage}%</span>
+//           <span>Quantity: ${quantity}</span>
+//           <span>Price: ${price}$</span>
+//         </p>
+//       `
+//       })
+//       .join('')}
+//   `
+// }
 
 // Наталья вариант
 // export function createCardMarkup (card) {

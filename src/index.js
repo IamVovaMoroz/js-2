@@ -4,6 +4,7 @@ import './styles/index.css'
 import { getUserByName } from './requests/products'
 
 import {
+  getMoviesByName,
   getAllProducts,
   getProductById,
   productAdd,
@@ -25,6 +26,8 @@ import {
   createPostMarkup,
   createPostsMarkup
 } from './services/markupService'
+
+// ---------------------------------
 
 // Задача 1 получение всех продуктов
 // const allProductsList = document.querySelector('#allProducts')
@@ -174,23 +177,23 @@ import {
 // Задача 7:
 // Получи и отрендери список карт по ID пользователя.
 
-const cardForm = document.querySelector('#userCartsForm')
-const cardPlace = document.querySelector('#carts')
+// const cardForm = document.querySelector('#userCartsForm')
+// const cardPlace = document.querySelector('#carts')
 
-cardForm.addEventListener('submit', onCardFormSubmit)
+// cardForm.addEventListener('submit', onCardFormSubmit)
 
-function onCardFormSubmit (event) {
-  event.preventDefault()
+// function onCardFormSubmit (event) {
+//   event.preventDefault()
 
-  const inputValueCard = event.target.elements.userId.value
+//   const inputValueCard = event.target.elements.userId.value
 
-  // console.log(inputValue)
+//   // console.log(inputValue)
 
-  getCardById(inputValueCard).then(({ data }) => {
-    console.log(data)
-    cardPlace.innerHTML = createCardMarkup(data)
-  })
-}
+//   getCardById(inputValueCard).then(({ data }) => {
+//     console.log(data)
+//     cardPlace.innerHTML = createCardMarkup(data)
+//   })
+// }
 
 // Задача 8a:
 // Получи пост по ID и отрендери его.
@@ -228,3 +231,24 @@ function onCardFormSubmit (event) {
 //     postsPlace.innerHTML = createCardMarkup(data)
 //   })
 // }
+
+const searchBarForm = document.querySelector('#searchBar-form')
+// console.log(searchBarForm)
+const allMoviesPlace = document.querySelector('#allMoviesPlace')
+// console.log(allMoviesPlace)
+
+searchBarForm.addEventListener('submit', onSearchBarFormSubmit)
+
+function onSearchBarFormSubmit (event) {
+  event.preventDefault()
+
+  const onSearchBarInput = event.target.elements.searchBarInput.value
+  console.log(onSearchBarInput)
+  // Обьект получаем
+  getMoviesByName(onSearchBarInput).then(res => console.log(res))
+
+  //  Рендерим в разметку
+  // allMoviesPlace.innerHTML = getMoviesByName(data)
+}
+
+// then(({ data: { results } })
