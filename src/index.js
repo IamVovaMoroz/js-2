@@ -246,11 +246,31 @@ function onSearchBarFormSubmit (event) {
   console.log(onSearchBarInput)
   // Обьект получаем
 
-  
   getMoviesByName(onSearchBarInput).then(res => console.log(res))
-
-  //  Рендерим в разметку
-  // allMoviesPlace.innerHTML = getMoviesByName(data)
 }
+// getMoviesByName(onSearchBarInput).then(({ data: { results } }) => {
+//       let markupMovies = results
+//         .map(
+//           result =>
+//             `<li><p> Вот данные User(s) с FirstName: ${user.firstName}</p><p>LastName: ${user.lastName}</p><p>Age: ${user.age}</p><p>Email: ${user.email}</p><p>Phone: ${user.phone}</p></li>`
+//         )
+//         .join('')
+//        allMoviesPlace.innerHTML = getMoviesByName(data)
+//     })
+
+//  Рендерим в разметку
+// allMoviesPlace.innerHTML = getMoviesByName(data)
+
+/* <li class="gallery__item" data-id="21">
+<img src="./images/grayhound.jpg" alt="" class="galler__item-img">
+<p class="gallery__item-descr">
+  <span class="gallery__item-name">
+    Greyhound
+  </span>
+  <span class="gallery__item-genres">
+    Drama, Action | 2020
+  </span>
+</p>
+</li> */
 
 // then(({ data: { results } })
