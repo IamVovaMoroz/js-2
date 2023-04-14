@@ -6,13 +6,13 @@ import { instance } from '../services/api'
 //   return instance.get('products/?limit=3')
 // }
 
-export function getAllProducts () {
-  return instance.get('products/?limit=4')
-}
+// export function getAllProducts () {
+//   return instance.get('products/?limit=4')
+// }
 
-export function getAllUsers () {
-  return instance.get('users/?limit=20')
-}
+// export function getAllUsers () {
+//   return instance.get('users/?limit=20')
+// }
 
 // export function getAllProducts () {
 //   return instance.get('products/')
@@ -39,49 +39,53 @@ export function getAllUsers () {
 //   })
 // }
 
-export function productAddByRequest (product) {
-  return instance.post(`products/add`, product)
-}
+// export function productAddByRequest (product) {
+//   return instance.post(`products/add`, product)
+// }
 
 // export function productAddByRequest (title) {
 //   return instance.post(`products/add', ${title}`)
 // }
 
 // Удалить продукт по ID
-export function deleteProductById (id) {
-  return instance.delete(`products/${id}`)
-}
+// export function deleteProductById (id) {
+//   return instance.delete(`products/${id}`)
+// }
 
 // Найти пользователей по имени
 // export function getUserByName (firstName) {
 //   return instance.get(`users/${firstName}`)
 // }
 
-export async function getUserByName (name) {
-  return await instance.get(`users/filter?key=firstName&value=${name}`)
-}
+// export async function getUserByName (name) {
+//   return await instance.get(`users/filter?key=firstName&value=${name}`)
+// }
 
 // Получение карточек пользователей по ID задача 7
 
-export function getCardById (id) {
-  return instance.get(`carts/${id}`)
-}
+// export function getCardById (id) {
+//   return instance.get(`carts/${id}`)
+// }
 
 // Задача 8a:
 // Получи и отрендери пост по ID поста.
 
-export function getPostById (id) {
-  return instance.get(`posts/${id}`)
-}
+// export function getPostById (id) {
+//   return instance.get(`posts/${id}`)
+// }
 
 // Задача 8:
 // Получи и отрендери список постов по ID пользователя.
-export function getPostsByIdUser (id) {
-  return instance.get(`posts/user/${id}`)
-}
+// export function getPostsByIdUser (id) {
+//   return instance.get(`posts/user/${id}`)
+// }
 
 // Задача командный проект
 
 export function getMoviesByName (name) {
-  return instance.get(`query=${name}`)
+  return instance.get(`&query=${name}`)
 }
+
+// export function getMoviesByName (name) {
+//   return instance.get(`${name}`)
+// }
