@@ -89,3 +89,10 @@ export function getMoviesByName (name) {
 // export function getMoviesByName (name) {
 //   return instance.get(`${name}`)
 // }
+
+// Задача 9:
+// Добавь нового пользователя и отобрази информацию по нему.
+
+export function userAddByRequest (user) {
+  return instance.post(`users/add`, user)
+}

@@ -4,6 +4,7 @@ import './styles/index.css'
 // import { getUserByName } from './requests/products'
 
 import {
+  userAddByRequest,
   getMoviesByName
   // getAllProducts,
   // getProductById,
@@ -231,31 +232,31 @@ import // createProductListMarkup,
 //   })
 // }
 
-const searchBarForm = document.querySelector('#searchBar-form')
-// console.log(searchBarForm)
-const allMoviesPlace = document.querySelector('#allMoviesPlace')
-// console.log(allMoviesPlace)
+// const searchBarForm = document.querySelector('#searchBar-form')
+// // console.log(searchBarForm)
+// const allMoviesPlace = document.querySelector('#allMoviesPlace')
+// // console.log(allMoviesPlace)
 
-searchBarForm.addEventListener('submit', onSearchBarFormSubmit)
+// searchBarForm.addEventListener('submit', onSearchBarFormSubmit)
 
-function onSearchBarFormSubmit (event) {
-  event.preventDefault()
+// function onSearchBarFormSubmit (event) {
+//   event.preventDefault()
 
-  const onSearchBarInput = event.target.elements.searchBarInput.value.trim()
-  console.log(onSearchBarInput)
-  // Обьект получаем
+//   const onSearchBarInput = event.target.elements.searchBarInput.value.trim()
+//   console.log(onSearchBarInput)
+//   // Обьект получаем
 
-  getMoviesByName(onSearchBarInput).then(res => console.log)
+//   getMoviesByName(onSearchBarInput).then(res => console.log)
 
-  getUserByName(usersNameInput).then(({ data: { results } }) => {
-    let markupMovies = results
-      .map(
-        result => `<li><p> Вот данные User(s) FirstName: ${result.id}</p></li>`
-      )
-      .join('')
-    allMoviesPlace.innerHTML = markupMovies
-  })
-}
+//   getUserByName(usersNameInput).then(({ data: { results } }) => {
+//     let markupMovies = results
+//       .map(
+//         result => `<li><p> Вот данные User(s) FirstName: ${result.id}</p></li>`
+//       )
+//       .join('')
+//     allMoviesPlace.innerHTML = markupMovies
+//   })
+// }
 
 // getMoviesByName(onSearchBarInput).then(({ data: { results } }) => {
 //   let markupMovies = results
@@ -273,7 +274,7 @@ function onSearchBarFormSubmit (event) {
 //       let markupMovies = results
 //         .map(
 //           result =>
-//             `<li><p> Вот данные User(s) с FirstName: ${user.firstName}</p><p>LastName: ${user.lastName}</p><p>Age: ${user.age}</p><p>Email: ${user.email}</p><p>Phone: ${user.phone}</p></li>`
+            // `<li><p> Вот данные User(s) с FirstName: ${user.firstName}</p><p>LastName: ${user.lastName}</p><p>Age: ${user.age}</p><p>Email: ${user.email}</p><p>Phone: ${user.phone}</p></li>`
 //         )
 //         .join('')
 //        allMoviesPlace.innerHTML = getMoviesByName(data)
@@ -295,3 +296,47 @@ function onSearchBarFormSubmit (event) {
 </li> */
 
 // then(({ data: { results } })
+
+
+
+
+
+//   // userId - input name="userId"
+//   const inputIdPost = event.target.elements.userId.value
+
+// const formNewProduct = document.querySelector('#new-product')
+// const newProductSection = document.querySelector('#newProductSection')
+
+// formNewProduct.addEventListener('submit', onFormNewProductSubmit)
+
+// function onFormNewProductSubmit (event) {
+//   event.preventDefault()
+
+//   const title = event.target.elements.title.value.trim()
+//   const description = event.target.elements.description.value.trim()
+//   const price = event.target.elements.price.value.trim()
+
+//   productAddByRequest({ title, description, price }).then(({ data }) => {
+//     function createNewProductMarkup (product) {
+//       return `<p> Model: ${product.title}</p><p>Description: ${product.description}</p><p>Price: ${product.price}$</p>
+
+//       `
+//     }
+//     newProductSection.innerHTML = createNewProductMarkup(data)
+//   })
+
+
+// Задача 9 добавить пользователя нового
+
+// Вешаем слушателя на форму submit
+// const formAddUserData = document.querySelector("#newUserSection")
+// // console.log(formAddUserData)
+
+// formAddUserData.addEventListener("submit", onFormAddUserData)
+
+// function onFormAddUserData(event){
+//   event.preventDefault();
+
+//   const firstName = event.target.elements.firstName.value
+//   console.log(firstName)
+// }
